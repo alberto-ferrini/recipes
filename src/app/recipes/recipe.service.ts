@@ -12,34 +12,38 @@ export class RecipeService {
             'A special pizza recipe',
             'https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg',
             [
-                new Ingredient("Flour pack",1),
-                new Ingredient("Tomato sauce",1),
-                new Ingredient("Mozzarella",1)
+                new Ingredient('Flour pack', 1),
+                new Ingredient('Tomato sauce', 1),
+                new Ingredient('Mozzarella', 1)
             ]
-            ),
+        ),
         new Recipe(
             'Cheeseburger',
             'The best hamburger ever',
             'https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg',
             [
-                new Ingredient("Bun",1),
-                new Ingredient("Hamburger",1),
-                new Ingredient("Cheese slice",1),
-                new Ingredient("Tomato",1),
-                new Ingredient("Salad",1)
+                new Ingredient('Bun', 1),
+                new Ingredient('Hamburger', 1),
+                new Ingredient('Cheese slice', 1),
+                new Ingredient('Tomato', 1),
+                new Ingredient('Salad', 1)
             ]
-            )
+        )
     ];
 
-    constructor(private shoppingListService:ShoppingListService) {
+    constructor(private shoppingListService: ShoppingListService) {
 
     }
 
-    public getRecipes(){
+    public getRecipes(): Recipe[] {
         return this.recipes.slice();
     }
 
-    public addIngredientsToShoppingList(ingredients:Ingredient[]){
+    public getRecipe(id: number): Recipe {
+        return this.recipes.slice()[id];
+    }
+
+    public addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addIngredients(ingredients);
     }
 }

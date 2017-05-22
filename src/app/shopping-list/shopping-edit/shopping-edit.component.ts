@@ -7,16 +7,16 @@ import { ShoppingListService } from '../sopping-list.service';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef:ElementRef;
-  @ViewChild('amountInput') amountInputRef:ElementRef;
-  
-  constructor(private shoppingListService:ShoppingListService) { }
+  @ViewChild('nameInput') nameInputRef: ElementRef;
+  @ViewChild('amountInput') amountInputRef: ElementRef;
+
+  constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
   }
 
-  onAddItem(){
-    var ingredient=new Ingredient(this.nameInputRef.nativeElement.value,this.amountInputRef.nativeElement.value);
+  onAddItem() {
+    const ingredient = new Ingredient(this.nameInputRef.nativeElement.value, this.amountInputRef.nativeElement.value);
     this.shoppingListService.addIngredient(ingredient);
   }
 
