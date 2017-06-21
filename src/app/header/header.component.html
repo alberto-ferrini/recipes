@@ -9,10 +9,10 @@
                 <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a role="button" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+                <li class="dropdown" appDropdown>
+                    <a role="button" class="dropdown-toggle">Manage <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a role="button">Save data</a></li>
+                        <li><a role="button" (click)="onSaveData()">Save data</a></li>
                         <li><a role="button">Fetch data</a></li>
                     </ul>
                 </li>
