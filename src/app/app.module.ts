@@ -13,7 +13,6 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/sopping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
@@ -24,6 +23,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard-service';
 import { RecipesModule } from './recipes/recipes.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { RecipesModule } from './recipes/recipes.module';
     HeaderComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
     SignupComponent,
     SigninComponent
   ],
@@ -40,7 +39,8 @@ import { RecipesModule } from './recipes/recipes.module';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
